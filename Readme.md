@@ -37,8 +37,8 @@ function Main() {
   const post: PostMetadata = {
     type: "text",
     content: {
-      type: "markdown",
-      text: "Hello World"
+      format: "markdown",
+      content: "Hello World"
     }
   }
   return (

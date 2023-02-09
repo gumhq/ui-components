@@ -1,0 +1,27 @@
+{
+  "name": "gum-ui-components",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Kunal Bagaria <kb24x7@gmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "18.0.0",
+    "react-dom": "18.0.0"
+  },
+  "dependencies": {
+    "@gumhq/sdk": "^1.0.3",
+    "@nextui-org/react": "^1.0.0-beta.12",
+    "@solana/web3.js": "^1.73.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "build": "tsc",
+    "publish": "npm publish"
+  }
+}

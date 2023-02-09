@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { Card, User, Text, Spacer, Loading } from "@nextui-org/react";
+import React from "react";
 import { ProfileMetadata } from "./profile";
+import { Card, User, Text, Spacer, Loading } from "@nextui-org/react";
 
 export interface PostMetadata {
   type: string,
@@ -11,48 +11,30 @@ export interface PostMetadata {
 }
 
 function Post({
-  postURI,
-  profileURI
+  data,
+  profileData
 }: {
-  postURI: string;
-  profileURI: string;
+  data: PostMetadata;
+  profileData: ProfileMetadata;
 }) {
-  const [post, setPost] = useState<PostMetadata>();
-  const [profile, setProfile] = useState<ProfileMetadata>();
-
-  useEffect(() => {
-    (async function () {
-      if (!profileURI || profile) return;
-      const res = await fetch(profileURI);
-      const data = await res.json();
-      setProfile(data);
-    })();
-    (async function () {
-      if (!postURI || post) return;
-      const res = await fetch(postURI);
-      const data = await res.json();
-      setPost(data);
-    })();
-  }, [profileURI, postURI]);
-
   return (
     <>
-      {(post && profile) ? (
+      {(data && profileData) ? (
         <Card css={{ mw: "500px" }}>
           <Card.Body>
             <User
-              src={profile.avatar}
-              name={profile.name}
+              src={profileData.avatar}
+              name={profileData.name}
               size="md"
               bordered
               color="secondary"
             >
-              <User.Link>@{profile.username}</User.Link>
+              <User.Link>@{profileData.username}</User.Link>
             </User>
             <Spacer y={0.5} />
             <Text css={{
               padding: "0 0.75rem",
-            }}>{post.content.content}</Text>
+            }}>{data.content.content}</Text>
           </Card.Body>
         </Card>
       ): <Loading size="md" />}

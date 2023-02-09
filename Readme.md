@@ -9,11 +9,19 @@ This is a collection of UI components for Gum. This package requires you to alre
 ### Profile
 
 ```tsx
-import { Profile } from '@gumhq/gum-ui-components';
+import { Profile, ProfileMetadata } from '@gumhq/ui-components';
 
 function Main() {
+  const profile: ProfileMetadata = {
+    name: "Kunal Bagaria",
+    bio: "Software Engineer @ Gum",
+    username: "kunal",
+    following: 5,
+    followers: 500,
+    avatar: "https://i.imgur.com/uGv5Zca.jpg"
+  }
   return (
-    <Profile profileURI="https://gum.fun/example/profile.json" />
+    <Profile data={profile} />
   );
 }
 
@@ -22,23 +30,22 @@ function Main() {
 ### Post
 
 ```tsx
-import { Post } from '@gumhq/gum-ui-components';
+import { Post, PostMetadata, ProfileMetadata } from '@gumhq/ui-components';
 
 function Main() {
+  const profile: ProfileMetadata = {...}
+  const post: PostMetadata = {
+    type: "text",
+    content: {
+      type: "markdown",
+      text: "Hello World"
+    }
+  }
   return (
     <Post
-      profileURI="https://gum.fun/example/profile.json"
-      postURI="https://gum.fun/example/post.json"
+      profileData={profile}
+      data={post}
     />
   );
 }
-
-```
-
-### Metadata Types
-
-You can import the expected types for the metadata of a post or profile.
-
-```tsx
-import { PostMetadata, ProfileMetadata } from '@gumhq/gum-ui-components';
 ```

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Card, User, Spacer, Text, Container, Row, Button, Loading } from "@nextui-org/react";
 
 export interface ProfileMetadata {
@@ -11,35 +11,24 @@ export interface ProfileMetadata {
 }
 
 function Profile({
-  profileURI
+  data
 }: {
-  profileURI: string;
+  data: ProfileMetadata;
 }) {
-  const [profile, setProfile] = useState<ProfileMetadata>();
-
-  useEffect(() => {
-    (async function () {
-      if (!profileURI) return;
-      const res = await fetch(profileURI);
-      const data = await res.json();
-      setProfile(data);
-    })();
-  }, [profileURI]);
-
   return (
     <>
-      {!profile ? <Loading size="md" /> : (
+      {!data ? <Loading size="md" /> : (
         <Card css={{ mw: "500px" }}>
           <Card.Body>
             <Container css={{ padding: "0rem", paddingRight: "0.75rem" }}>
               <Row justify="space-between">
                 <User
-                  src={profile?.avatar}
-                  name={profile?.name}
+                  src={data.avatar}
+                  name={data.name}
                   bordered
                   color="secondary"
                 >
-                  <User.Link>@{profile?.username}</User.Link>
+                  <User.Link>@{data.username}</User.Link>
                 </User>
                 <Button auto rounded>Follow</Button>
               </Row>
@@ -49,9 +38,9 @@ function Profile({
               <Text>{"Full-stack developer, @gumhq lover she/her 🎉"}</Text>
               <Spacer y={0.5} />
               <Row>
-                <Text color="gray" weight="medium" size="$sm">{profile?.following} {"Following"}</Text>
+                <Text color="gray" weight="medium" size="$sm">{data.following} {"Following"}</Text>
                 <Spacer x={0.5} />
-                <Text color="gray" weight="medium" size="$sm">{profile?.followers} {"Followers"}</Text>
+                <Text color="gray" weight="medium" size="$sm">{data.followers} {"Followers"}</Text>
               </Row>
             </Container>
           </Card.Body>

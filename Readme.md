@@ -9,7 +9,7 @@ This is a collection of UI components for Gum. This package requires you to alre
 ### Profile
 
 ```tsx
-import { Profile } from 'gum-ui-components';
+import { Profile } from '@gumhq/gum-ui-components';
 
 function Main() {
   return (
@@ -22,7 +22,7 @@ function Main() {
 ### Post
 
 ```tsx
-import { Post } from 'gum-ui-components';
+import { Post } from '@gumhq/gum-ui-components';
 
 function Main() {
   return (
@@ -40,5 +40,5 @@ function Main() {
 You can import the expected types for the metadata of a post or profile.
 
 ```tsx
-import { PostMetadata, ProfileMetadata } from 'gum-ui-components';
+import { PostMetadata, ProfileMetadata } from '@gumhq/gum-ui-components';
 ```

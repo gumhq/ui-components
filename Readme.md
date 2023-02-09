@@ -1,9 +1,9 @@
 # Gum UI Components
 
-![Example](https://jc6qaozbaz24hohddrzkrpggseylt5v7bxixeyxfjsbjhv43lkua.arweave.net/SL0AOyEGdcO44xxyqLzGkTC59r8N0XJi5UyCk9ebWqg)
-
-
 This is a collection of UI components for Gum. This package requires you to already have installed next-ui in your app. [Install Next-UI](https://nextui.org/docs/guide/getting-started)
+
+
+![Example](https://jc6qaozbaz24hohddrzkrpggseylt5v7bxixeyxfjsbjhv43lkua.arweave.net/SL0AOyEGdcO44xxyqLzGkTC59r8N0XJi5UyCk9ebWqg)
 
 
 ### Profile

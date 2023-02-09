@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Card, User, Text, Spacer, Loading } from "@nextui-org/react";
-import { ProfileInt } from "./profile";
+import { ProfileMetadata } from "./profile";
 
-export interface TextPostInt {
+export interface PostMetadata {
   type: string,
   content: {
     content: string
@@ -17,8 +17,8 @@ function Post({
   postURI: string;
   profileURI: string;
 }) {
-  const [post, setPost] = useState<TextPostInt>();
-  const [profile, setProfile] = useState<ProfileInt>();
+  const [post, setPost] = useState<PostMetadata>();
+  const [profile, setProfile] = useState<ProfileMetadata>();
 
   useEffect(() => {
     (async function () {

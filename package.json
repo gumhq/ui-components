@@ -1,10 +1,14 @@
 {
   "name": "gum-ui-components",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Kunal Bagaria <kb24x7@gmail.com>",
   "license": "MIT",
+  "files": [
+    "dist",
+    "components"
+  ],
   "peerDependencies": {
     "react": "18.0.0",
     "react-dom": "18.0.0"

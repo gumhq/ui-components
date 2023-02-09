@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, User, Spacer, Text, Container, Row, Button, Loading } from "@nextui-org/react";
 
-export interface ProfileInt {
+export interface ProfileMetadata {
   name: string;
   bio: string;
   username: string;
@@ -15,7 +15,7 @@ function Profile({
 }: {
   profileURI: string;
 }) {
-  const [profile, setProfile] = useState<ProfileInt>();
+  const [profile, setProfile] = useState<ProfileMetadata>();
 
   useEffect(() => {
     (async function () {

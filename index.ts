@@ -1,2 +1,2 @@
-export { Post, TextPostInt } from './components/post';
-export { Profile, ProfileInt } from './components/profile';
+export { Post, PostMetadata } from './components/post';
+export { Profile, ProfileMetadata } from './components/profile';

@@ -7,7 +7,8 @@ interface PostMetadata {
   content: {
     content: string
     format: string
-  }
+  },
+  reply?: () => any
 }
 
 function Post({

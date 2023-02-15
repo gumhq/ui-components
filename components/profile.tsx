@@ -1,13 +1,18 @@
 import React from "react";
 import { Card, User, Spacer, Text, Container, Row, Button, Loading } from "@nextui-org/react";
 
-export interface ProfileMetadata {
+interface ProfileMetadata {
   name: string;
   bio: string;
   username: string;
   following: number;
   followers: number;
   avatar: string;
+  connect?: {
+    following: boolean;
+    follow: () => Promise<any | void>;
+    unfollow: () => Promise<any | void>;
+  }
 }
 
 function Profile({
@@ -15,6 +20,15 @@ function Profile({
 }: {
   data: ProfileMetadata;
 }) {
+
+  function handleFollow() {
+    data?.connect?.follow();
+  }
+
+  function handleUnfollow() {
+    data?.connect?.unfollow();
+  }
+
   return (
     <>
       {!data ? <Loading size="md" /> : (
@@ -30,12 +44,21 @@ function Profile({
                 >
                   <User.Link>@{data.username}</User.Link>
                 </User>
-                <Button auto rounded>Follow</Button>
+                {data.connect && (
+                  <Button
+                    auto
+                    rounded
+                    bordered={data.connect.following}
+                    onClick={() => data.connect?.following ? handleUnfollow() : handleFollow()}
+                  >
+                    {!data.connect?.following ? "Follow" : "Unfollow"}
+                  </Button>
+                )}
               </Row>
             </Container>
             <Spacer y={0.5} />
             <Container css={{ padding: "0 0.75rem" }}>
-              <Text>{"Full-stack developer, @gumhq lover she/her 🎉"}</Text>
+              <Text>{data.bio}</Text>
               <Spacer y={0.5} />
               <Row>
                 <Text color="gray" weight="medium" size="$sm">{data.following} {"Following"}</Text>
@@ -50,4 +73,4 @@ function Profile({
   );
 }
 
-export { Profile }
+export { Profile, ProfileMetadata }

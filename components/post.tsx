@@ -2,7 +2,7 @@ import React from "react";
 import { ProfileMetadata } from "./profile";
 import { Card, User, Text, Spacer, Loading } from "@nextui-org/react";
 
-export interface PostMetadata {
+interface PostMetadata {
   type: string,
   content: {
     content: string
@@ -42,4 +42,4 @@ function Post({
   );
 }
 
-export { Post }
+export { Post, PostMetadata }

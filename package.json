@@ -1,6 +1,6 @@
 {
   "name": "@gumhq/ui-components",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Kunal Bagaria <kb24x7@gmail.com>",
@@ -10,8 +10,8 @@
     "components"
   ],
   "peerDependencies": {
-    "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
     "@gumhq/sdk": "^1.0.3",
